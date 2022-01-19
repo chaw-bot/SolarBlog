@@ -2,6 +2,14 @@
   list-style: none;
 }
 
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
 .card {
   width: 100%;
 }
