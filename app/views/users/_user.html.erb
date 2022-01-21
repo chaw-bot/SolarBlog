@@ -1,0 +1,15 @@
+<div class="card mt-3">
+<%= link_to user do %>
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="<%= user.photo %>" width="100">
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h2 class="card-title"><%= user.name %></h2>
+        <p class="card-text d-flex justify-content-end"><small class="text-muted">Number of posts: <%= user.posts.size %></small></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
