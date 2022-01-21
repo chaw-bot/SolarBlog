@@ -1,12 +1,12 @@
 <div class="user-details">
-  <a href="/">
-    <%= render partial: "partials/card"%>
-  </a>
+  <%= render @user %>
   <%= render partial: "partials/bio"%>
-  <%= render partial: "partials/post"%>
-  <a href="show/posts">
-    <div class="a-btn">
-      <button type="button" class="btn btn-secondary mt-3">See all posts</button>
-    </div>
-  </a>
+  <ul>
+    <% @user.return_last_three_posts.each do |post|%>
+      <%= render partial: "posts/post", locals: {post: post} %>
+    <% end %>
+  </ul>
+  <div class="a-btn">
+    <%=link_to "See all posts", user_posts_path(@user.id), class:"see-all btn btn-primary justify-content-center align-self-center"%>
+  </div>
 </div>
