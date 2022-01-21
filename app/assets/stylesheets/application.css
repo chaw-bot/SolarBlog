@@ -15,6 +15,29 @@ a:link {
   padding-right: 5%;
 }
 
+.success,
+.error {
+  border-radius: 5px;
+  color: white;
+  width: 30%;
+}
+
+.success {
+  border: 2px solid green;
+  background: green;
+}
+
+.error {
+  border: 2px solid red;
+  background: red;
+}
+
+.val {
+  display: flex;
+  justify-content: center;
+  text-align-last: center;
+}
+
 .card {
   width: 100%;
 }
