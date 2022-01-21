@@ -1,28 +1,21 @@
 <div class="card mt-3">
   <div class="card-body">
     <div class="header">
-      <h5 class="card-title">Post #1 by username</h5>
-      <p class="card-text"><small class="text-muted">Comments: x, Likes: y</small></p>
+      <h3 class="card-title"><%= post.user.name %></h3>
+      <p class="card-text"><small class="text-muted">Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></small></p>
     </div>
+    <h5>
+      <%= post.title %>
+    </h5>
     <p class="card-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus
-      mi, luctus id ligula nec, malesuada rhoncus tortor. Ut egestas mollis
-      erat. Aliquam imperdiet nisi ac porttitor imperdiet. Etiam lacus lorem,
-      euismod eu porttitor porttitor, accumsan eget risus. Etiam at diam id
-      nunc aliquet interdum ut in sapien. Sed ultrices eleifend massa, eget
-      mattis magna sollicitudin fringilla. Mauris ac venenatis nisi,
-      ac semper eros. Vivamus in facilisis ipsum. Donec ultrices semper
-      venenatis. Sed malesuada euismod pellentesque. Proin id urna id purus
-      mattis viverra eget nec ex. Phasellus tincidunt nec nibh quis
-      pellentesque. Nunc pulvinar felis auctor lectus sagittis accumsan.
-      Sed malesuada, elit quis vulputate luctus, lacus dolor pellentesque
-      dolor, ac accumsan turpis lectus sed lacus.
-      </br>
-      </br>
-      Praesent eu fringilla arcu. Ut euismod felis massa, ut venenatis 
-      purus sodales sed. Ut id placerat ligula. Cras id sapien a ex 
-      condimentum hendrerit hendrerit ut justo. Curabitur convallis eu
-      elit ut gravida. Quisque ultrices eget sapien et molestie. 
+      <%= post.text %>
     </p>
+    <div class="card-text d-flex justify-content-end">
+      <%= render partial: "partials/likes" %>
+    </div>
   </div>
 </div>
+
+
+
+

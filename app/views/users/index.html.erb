@@ -1,7 +1,3 @@
 <div class="home">
-  <% 7.times do %>
-    <a href="users/show">
-      <%= render partial: "partials/card"%>
-    </a>
-  <% end %>
+  <%= render @users %>
 </div>

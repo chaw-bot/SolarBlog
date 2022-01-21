@@ -1,9 +1,16 @@
 <div class="user-posts">
-  <a href="/">
-    <%= render partial: "partials/card" %>
-  </a>
-  <%= render partial: "partials/post_comments" %>
+  <%= render @user %>
   <div class="a-btn">
-    <button type="button" class="btn btn-secondary mt-3">Pagination</button>
+    <button class="btn btn-primary mt-3">
+      <%= link_to 'Add New Post', new_user_post_path(@user.id) %>
+    </button>
+  </div>
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <%= render partial: "partials/comments", locals: {comments: post.comments } %>
+  <% end %>
+
+  <div class="a-btn">
+    <button type="button" class="btn btn-primary mt-3">Pagination</button>
   </div>
 </div>

@@ -1,4 +1,16 @@
 <div class="post-details">
-  <%= render partial: "partials/post_details" %>
-  <%= render partial: "partials/comments" %>
+  <%= render partial: "partials/post_details", locals: {post: @post} %>
+  <%= render partial: "partials/comments", locals: {comments: @post.comments } %>
+
+  <hr/>
+
+  <h1>Leave your comment here...</h1>
+  <%= form_with url: new_comment_user_post_path do |form| %>
+    <div class="mb-3">
+      <%= form.text_area :text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>

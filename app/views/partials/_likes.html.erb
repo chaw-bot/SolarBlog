@@ -1,0 +1,4 @@
+<%= form_with model:[@post, @post.likes.build], url: like_post_user_post_path, method: :post, local: true do |form| %>
+  <%= form.submit "Add like", class: "btn btn-primary" %>
+<% end %>
+        

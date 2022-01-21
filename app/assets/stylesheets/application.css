@@ -10,6 +10,11 @@ a:link {
   text-decoration: none;
 }
 
+.navbar {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .card {
   width: 100%;
 }
@@ -29,4 +34,21 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.post-form {
+  padding: 10% 20%;
+  height: 100vh;
+}
+
+.new-post {
+  height: 100%;
+}
+
+.form {
+  height: 90%;
+}
+
+.text {
+  height: 40vh;
 }

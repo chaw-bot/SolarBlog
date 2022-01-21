@@ -1,0 +1,20 @@
+<div class="post-form">
+  <div class="card new-post">
+    <div class="card-body">
+      <h1>Create a new post...</h1>
+        <%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :new_post, class: "form" do |form| %>
+            <div class="mb-3">
+              <%= form.label :post_title %>
+              <%= form.text_field :title, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :your_post %>
+              <%= form.text_area :text, class: "form-control text" %>
+            </div>
+            <div class="mb-3">
+              <%= form.submit class: "btn btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
