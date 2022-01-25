@@ -16,13 +16,13 @@ bio = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Mauris ac venenatis nisi, ac semper eros. Vivamus in facilisis ipsum.
 '
 
-user1 = User.create( name: 'Lenny', photo: image, bio: bio, posts_counter: 0 )
+user1 = User.create!( name: 'Lenny', photo: image, bio: bio, posts_counter: 0, email: 'lenny@mail.com', password: 'qwd43rfews' )
 
-user2 = User.create( name: 'Mel', photo: image, bio: bio, posts_counter: 0 )
+user2 = User.create!( name: 'Mel', photo: image, bio: bio, posts_counter: 0, email: 'mel@mail.com', password: 'qwd43rfews' )
 
-user3 = User.create( name: 'Joe', photo: image, bio: bio, posts_counter: 0 )
+user3 = User.create!( name: 'Joe', photo: image, bio: bio, posts_counter: 0, email: 'joe@mail.com', password: 'qwd43rfews' )
 
-user4 = User.create( name: 'Paulo', photo: image, bio: bio, posts_counter: 0 )
+user4 = User.create!( name: 'Paulo', photo: image, bio: bio, posts_counter: 0, email: 'paulo@mail.com', password: 'qwd43rfews' )
 
 post1 = user1.posts.create!( title: 'To Be', text: 'The big question is: "To be or not to be a Ruby programmer"', likes_counters: 0, comments_counter: 0)
 post2 = user2.posts.create!( title: 'Is it a Language?', text: 'Why people say HTML is not a programming language...', likes_counters: 0, comments_counter: 0)
