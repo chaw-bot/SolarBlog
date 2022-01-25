@@ -10,6 +10,8 @@ gem 'rails', '~> 7.0.1'
 
 gem 'devise'
 
+gem 'mailcatcher'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
