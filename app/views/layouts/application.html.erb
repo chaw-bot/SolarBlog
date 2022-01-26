@@ -15,16 +15,16 @@
   </head>
 
   <body>
-    <%= render partial: "partials/navbar" %>
-  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render partial: "partials/navbar" %>  
+    
+    <% if notice.present? %>
+      <div class="notification is-link is-light"><%= notice %></div>
+    <% end %>
 
-    <div class="val">
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :p, msg, class: name %>
-      <% end -%>
-    </div>
+    <% if alert.present? %>
+      <div class="notification is-danger is-light"><%= alert %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
