@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Login features' do
-
   it 'Test username & password inputs and the "Submit" button.' do
     visit('/users/sign_in')
     expect(page).to have_field('Email', type: 'email')
@@ -25,12 +24,12 @@ RSpec.describe 'Login features' do
     expect(page).to have_content('Invalid Email or password.')
   end
 
-  it 'I am redirected to the root page when I click the submit button after filling in the username and the password with correct data' do
+  it 'I am redirected to the root page when I click the submit button after
+    filling in the username and the password with correct data' do
     visit('/users/sign_in')
     fill_in('Email', with: 'mel@mail.com')
     fill_in('Password', with: 'r89eudhbgvb')
     click_button('Log in')
     expect(current_path).to have_content('/users')
   end
-
 end

@@ -13,14 +13,17 @@ RSpec.feature 'post show page', js: true, type: :feature do
     eleifend massa, eget mattis magna sollicitudin fringilla.
     Mauris ac venenatis nisi, ac semper eros. Vivamus in facilisis ipsum.
     '
-    @lenny = User.create!( name: 'Lenny', photo: image, bio: bio, posts_counter: 0, email: 'lenny@mail.com', password: 'r89eudhbgvb', confirmed_at: Time.now )
+    @lenny = User.create!(name: 'Lenny', photo: image, bio: bio, posts_counter: 0, email: 'lenny@mail.com',
+                          password: 'r89eudhbgvb', confirmed_at: Time.now)
     fill_in 'Email', with: 'lenny@mail.com'
     fill_in 'Password', with: 'r89eudhbgvb'
     click_button 'Log in'
 
-    post = @lenny.posts.create!( title: 'To Be', text: 'The big question is: "To be or not to be a Ruby programmer"', likes_counters: 0, comments_counter: 0)
+    post = @lenny.posts.create!(title: 'To Be', text: 'The big question is: "To be or not to be a Ruby programmer"',
+                                likes_counters: 0, comments_counter: 0)
 
-    mel = User.create!( name: 'Mel', photo: image, bio: bio, posts_counter: 0, email: 'mel@mail.com', password: 'r89eudhbgvb', confirmed_at: Time.now )
+    mel = User.create!(name: 'Mel', photo: image, bio: bio, posts_counter: 0, email: 'mel@mail.com',
+                       password: 'r89eudhbgvb', confirmed_at: Time.now)
     mel.comments.create!(text: 'Well said.', post: post)
     mel.comments.create!(text: 'I would not have said it better', post: post)
     visit user_post_path(@lenny, post)
