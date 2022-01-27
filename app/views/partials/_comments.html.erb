@@ -2,7 +2,13 @@
   <ul class="card-body">
     <h6>Comments</h6>
     <% comments.each do |comment| %>
-      <li><%= comment.user.name %>: <%= comment.text %></li>
+      <br/>
+      <span><strong><%= comment.user.name %></strong>: <%= comment.text %></span>
+    <% can?(:destroy, comment) %>
+      <% if can? :destroy, comment %>
+        <%= link_to 'Delete', comment_path(comment.id), method: :delete, class: "link-danger"%>
+      <% end %>
     <% end %>
   </ul>
 </div>
+
