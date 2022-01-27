@@ -2,11 +2,14 @@
   <div class="card-body">
     <div class="header">
       <h3 class="card-title"><%= post.user.name %></h3>
+    </div>
+    <hr/>
+    <div class="header">
+      <h5>
+        <%= post.title %>
+      </h5>
       <p class="card-text"><small class="text-muted">Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></small></p>
     </div>
-    <h5>
-      <%= post.title %>
-    </h5>
     <p class="card-text">
       <%= post.text %>
     </p>
@@ -15,7 +18,3 @@
     </div>
   </div>
 </div>
-
-
-
-

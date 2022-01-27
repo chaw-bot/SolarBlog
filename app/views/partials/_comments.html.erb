@@ -1,8 +1,17 @@
 <div class="card">
   <ul class="card-body">
     <h6>Comments</h6>
+    <br/>
     <% comments.each do |comment| %>
-      <li><%= comment.user.name %>: <%= comment.text %></li>
-    <% end %>
+    <li class="comment-box">
+      <span><strong><%= comment.user.name %></strong>: <%= comment.text %></span>
+      <% can?(:destroy, comment) %>
+        <% if can? :destroy, comment %>
+          <%= button_to 'Delete', comment_path(comment.id), method: :delete, class: "btn btn-danger"%>
+        <% end %>
+      <% end %>
+    </li>
+    <br/>
   </ul>
 </div>
+
