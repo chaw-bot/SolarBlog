@@ -23,5 +23,4 @@ class CommentsController < ApplicationController
     flash[:success] = 'Removed comment!'
     redirect_back fallback_location: [post.user, post]
   end
-
 end
