@@ -14,4 +14,14 @@ class CommentsController < ApplicationController
       render user_post_path
     end
   end
+
+  def destroy
+    puts 'Removing Comment'
+    comment = Comment.find(params[:id])
+    post = comment.post
+    comment.destroy!
+    flash[:success] = 'Removed comment!'
+    redirect_back fallback_location: [post.user, post]
+  end
+
 end
