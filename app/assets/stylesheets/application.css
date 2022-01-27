@@ -15,21 +15,29 @@ a:link {
   padding-right: 5%;
 }
 
+.button_to {
+  text-align: end;
+}
+
 .success,
-.error {
+.error,
+.is-danger,
+.is-link {
   border-radius: 5px;
   color: white;
-  width: 30%;
+  text-align: center;
 }
 
-.success {
-  border: 2px solid green;
-  background: green;
+.success,
+.is-link {
+  border: 2px solid rgb(0 128 0 / 0%);
+  background: rgb(0 128 0 / 45%);
 }
 
-.error {
-  border: 2px solid red;
-  background: red;
+.error,
+.is-danger {
+  border: 2px solid #f000;
+  background: rgb(255 0 0 / 29%);
 }
 
 .val {
@@ -62,10 +70,6 @@ a:link {
 .post-form {
   padding: 10% 20%;
   height: 100vh;
-}
-
-.new-post {
-  height: 100%;
 }
 
 .form {
