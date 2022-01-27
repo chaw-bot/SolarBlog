@@ -32,6 +32,7 @@ begin
   end
 
   Capybara.javascript_driver = :selenium_chrome
+
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
@@ -89,4 +90,6 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  Capybara.default_driver = :selenium_chrome
 end
