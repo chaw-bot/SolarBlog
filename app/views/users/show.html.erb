@@ -7,6 +7,6 @@
     <% end %>
   </ul>
   <div class="a-btn">
-    <%=link_to "See all posts", user_posts_path(@user.id), class:"see-all btn btn-primary justify-content-center align-self-center"%>
+    <%=link_to "See all posts", user_posts_path(@user.id), class:"see-all btn btn-primary justify-content-center align-self-center", type: 'submit' , id: "see_all_#{@user.id}"%>
   </div>
 </div>
