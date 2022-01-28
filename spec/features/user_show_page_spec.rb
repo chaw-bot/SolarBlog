@@ -20,7 +20,7 @@ RSpec.describe 'User Show Page', type: :feature do
     @post3 = @user_one.posts.create!(title: 'Attack On Titan',
                                      text: 'With the clif hanger seen in the first half of season 4, do you think...',
                                      likes_counters: 0,
-                                     comments_counter: 0)
+                                     comments_counter: 6)
     visit user_path(@user_one)
   end
 
