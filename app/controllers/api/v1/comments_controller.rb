@@ -1,7 +1,7 @@
 module Api
   module V1
     class CommentsController < ApplicationController
-      before_action :get_post
+      before_action :show_post
 
       def index
         @comments = show_post.comments.includes(:user)
