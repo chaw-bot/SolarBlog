@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_115946) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "jwt_denylists", force: :cascade do |t|
+  create_table "jwt_denylist", force: :cascade do |t|
     t.string "jti"
     t.datetime "exp", precision: 6, null: false
     t.index ["jti"], name: "index_jwt_denylists_on_jti"
@@ -63,10 +63,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_115946) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at", precision: 6
     t.datetime "remember_created_at", precision: 6
-    t.string "confirmation_token"
-    t.datetime "confirmed_at", precision: 6
-    t.datetime "confirmation_sent_at", precision: 6
-    t.string "unconfirmed_email"
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
