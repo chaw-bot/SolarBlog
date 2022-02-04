@@ -2,13 +2,12 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def create
-    post = Post.find(params[:id])
-    comment = current_user.comments.new(text: params[:text])
-    comment.post = post
-
-    if comment.save
+    @post = Post.find(params[:id])
+    @comment = @post.comments.build(comment_params)
+    @comment.user = current_user
+    if @comment.save
       flash[:success] = 'Your comment has been added!'
-      redirect_to user_post_path
+      redirect_to [@post.user, @post]
     else
       flash.now[:error] = 'Comment could not be added'
       render user_post_path
@@ -22,5 +21,11 @@ class CommentsController < ApplicationController
     comment.destroy!
     flash[:success] = 'Removed comment!'
     redirect_back fallback_location: [post.user, post]
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
