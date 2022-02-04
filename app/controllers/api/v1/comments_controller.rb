@@ -1,11 +1,11 @@
 module Api
   module V1
     class CommentsController < ApplicationController
-      before_action :show_post
-      before_action :authenticate_user!
+      load_and_authorize_resource
 
       def index
         @comments = show_post.comments.includes(:user)
+        render json: { success: true, data: { comments: @comments } }
       end
 
       def create
