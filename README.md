@@ -2,7 +2,7 @@
 
 The Blog app is a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-<!-- ## Screenshots
+## Screenshots
 
 > |Screenshot 1|Screenshots 2|
 > |--------------|----------------|
@@ -12,7 +12,7 @@ The Blog app is a blog website. It's a fully functional website that will show t
 > |![Screenshot](./images/Screenshot3.png)|![Screenshot](./images/Screenshot4.png)|!
 > |Screenshot 5|Screenshots 6|
 > |--------------|----------------|
-> |![Screenshot](./images/Screenshot5.png)|![Screenshot](./images/Screenshot6.png)|! -->
+> |![Screenshot](./images/Screenshot5.png)|![Screenshot](./images/Screenshot6.png)|!
 
 ## Built With
 - Ruby
