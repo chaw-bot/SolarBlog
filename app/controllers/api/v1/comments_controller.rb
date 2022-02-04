@@ -4,7 +4,7 @@ module Api
       load_and_authorize_resource
 
       def index
-        @comments = Comment.where({ post_id: params[:post_id]}).order('created_at DESC')
+        @comments = Comment.where({ post_id: params[:post_id] }).order('created_at DESC')
         render json: { success: true, data: { comments: @comments } }
       end
 

@@ -5,13 +5,12 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to [@post.user, @post], notice: "Comment was successfully created." }
-      else
-        format.html { render :new }
-      end
+    if @comment.save
+      flash[:success] = 'Your comment has been added!'
+      redirect_to [@post.user, @post]
+    else
+      flash.now[:error] = 'Comment could not be added'
+      render user_post_path
     end
   end
 
