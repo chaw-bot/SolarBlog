@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
     if comment.save
       flash[:success] = 'Your comment has been added!'
-      redirect_to user_post_path
+      redirect_back fallback_location: [post.user, post]
     else
       flash.now[:error] = 'Comment could not be added'
       render user_post_path
